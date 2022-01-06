@@ -1,0 +1,35 @@
+.p-grid {
+  display: flex;
+  /* width: 100%; */
+}
+
+.p-col1 {
+  flex: 1;
+  margin: 10px;
+  /* padding: 15px; */
+  width: 10%;
+}
+
+.p-col2 {
+  flex: 2;
+  margin: 10px;
+  /* padding: 15px; */
+  width: 90%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+p-card {
+  margin: 2px;
+}
+
+
+.photo {
+  float: right;
+  margin-right: 10px;
+  margin-top: -80px;
+}
