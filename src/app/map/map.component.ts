@@ -20,7 +20,7 @@ export class MapComponent implements OnInit, OnChanges {
   private lng = -97.20766235809704;
   private zoom = 9;
   private url: any;
-  private marker: mapboxgl.Marker;
+  private marker: mapboxgl.Marker =  new mapboxgl.Marker({draggable: true});
   private map: mapboxgl.Map;
 
   @Input() mapCoord: any;
@@ -40,8 +40,7 @@ export class MapComponent implements OnInit, OnChanges {
             this.lng = this.newCoordinates[0];
             this.lat = this.newCoordinates[1];
 
-            this.buildMap();
-            this.marker.setLngLat(this.newCoordinates);
+            this.marker.setLngLat(this.newCoordinates !==undefined ? this.newCoordinates : [this.lng, this.lat] );
           }
         }
       }
@@ -50,6 +49,7 @@ export class MapComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.url = houseList;
+    this.buildMap();
   }
 
   buildMap(): void {
